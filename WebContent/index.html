@@ -1,12 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Webpage</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Rounded&display=swap');
+body {
+	margin: 0;
+	background-color: rgb(190, 229, 244);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-family: 'Nanum Gothic Rounded', sans-serif;
+}
+
+.outer-div {
+	background-color: rgb(255, 255, 255);
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 320px;
+	height: 600px;
+}
+
+.middle-div {
+	background-color: rgb(104, 176, 208);
+	border: 1px dashed black;
+	border-radius: 10px;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 280px;
+    height: 560px;
+}
+
+.inner-div {
+	background-color: rgb(210, 210, 210);
+	border: 1px solid gray;
+	border-radius: 5px;
+	width: 300px;
+    height: 550px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#top-text {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+#top-text span:first-child {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#top-text span:last-child {
+	font-size: 7px;
+}
+
+#content {
+	background-color: white;
+	border: 1px solid black;
+	width: 90%;
+	height: 400px;
+	margin-top: 10px;
+}
+
+@media ( max-width : 393px) and (max-height: 852px) {
+	.outer-div {
+		width: 90%;
+		height: 50%;
+	}
+	.middle-div {
+		width: 80%;
+		height: 70%;
+	}
+	.inner-div {
+		width: 60%;
+		height: 60%;
+	}
+#top-text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px; /* span 사이 공백 줄이기 */
+	width: 100%;
+	font-size: 14px;
+	margin-bottom: 5px; /* content와의 간격 줄이기 */
+}
+
+	#top-text span:last-child {
+		font-size: 6px;
+	}
+#content {
+	background-color: white;
+	border: 1px solid black;
+	width: 90%;
+	height: 400px;
+	margin-top: 20px;
+	border-radius: 5px;
+}
+}
+</style>
 </head>
 <body>
-<a href="dog.html">강아지</a>
-<a href="cat.html">고양이</a>
- 유우시
+	<div class="outer-div">
+		<div class="middle-div">
+			<div class="inner-div">
+				<div id="top-text">
+					<span>유우시 님의 미니홈피</span>
+					<span>today 520 | TOTAL 20242222 </span>
+				</div>
+				<div id="content"></div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
