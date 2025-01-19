@@ -5,22 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Responsive Webpage</title>
 <style>
-
 @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+	font-family: 'Pretendard-Regular';
+	src:
+		url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+		format('woff');
+	font-weight: 400;
+	font-style: normal;
 }
 
-*{
-    font-family: 'Pretendard-Regular';
+* {
+	font-family: 'Pretendard-Regular';
 }
 
 body {
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+	src:
+		url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+		format('woff');
+	font-weight: 400;
+	font-style: normal;
 	margin: 0;
 	background-color: rgb(190, 229, 244);
 	display: flex;
@@ -70,7 +73,7 @@ body {
 	margin-bottom: 10px;
 	position: relative;
 	top: 15px;
-	 font-weight: 300;
+	font-weight: 300;
 }
 
 #top-text span:first-child {
@@ -126,6 +129,18 @@ body {
 		margin-top: 20px;
 		border-radius: 5px;
 	}
+	#content-top {
+		height: 170px;
+		background-color: aqua;
+	}
+	#content-middle {
+		height: 230px;
+		background-color: blueviolet;
+	}
+	#content-bottom {
+		background-color: darkgrey;
+		height: 150px;
+	}
 }
 </style>
 </head>
@@ -136,7 +151,22 @@ body {
 				<div id="top-text">
 					<span>유우시 님의 미니홈피</span> <span>today 520 | TOTAL 20242222 </span>
 				</div>
-				<div id="content"></div>
+				<div id="content">
+					<div id="content-top">
+						<div id="content-top-left">
+							<div id="profile"></div>
+							<div id="today-is"></div>
+							<div id="message"></div>
+						</div>
+						<div id="content-top-right">
+							<div id="bgm"></div>
+							<div id="favorite"></div>
+							<div></div>
+						</div>
+					</div>
+					<div id="content-middle"></div>
+					<div id="content-bottom"></div>
+				</div>
 			</div>
 		</div>
 	</div>
