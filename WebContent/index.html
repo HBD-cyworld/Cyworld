@@ -54,11 +54,13 @@ background-color: rgb(255, 255, 255);
 #top-text {
 display: flex
 ;
-    justify-content: space-between;
+    justify-content: space-evenly;
     font-size: 14px;
     width: 300px;
     height: 30px;
     margin-bottom: 10px;
+    position: relative;
+    top: 15px;
 }
 
 #top-text span:first-child {
@@ -67,7 +69,9 @@ display: flex
 }
 
 #top-text span:last-child {
-	font-size: 7px;
+	position: relative;
+    top: 10px;
+    font-size: 7px;
 }
 
 #content {
