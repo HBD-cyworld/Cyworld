@@ -5,81 +5,92 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Responsive Webpage</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Rounded&display=swap');
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    font-family: 'Pretendard-Regular';
+}
+
 body {
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
 	margin: 0;
 	background-color: rgb(190, 229, 244);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	font-family: 'Nanum Gothic Rounded', sans-serif;
 }
 
 .outer-div {
-background-color: rgb(255, 255, 255);
-    border: 1.5px solid black;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 380px;
-    height: 670px;
+	background-color: rgb(255, 255, 255);
+	border: 1.5px solid black;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 380px;
+	height: 670px;
 }
 
 .middle-div {
-    background-color: rgb(104, 176, 208);
-    border: 1.5px dashed black;
-    border-radius: 10px;
-    display: flex
-;
-    justify-content: center;
-    align-items: center;
-    width: 360px;
-    height: 650px;
+	background-color: rgb(104, 176, 208);
+	border: 1.5px dashed black;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 360px;
+	height: 650px;
 }
 
 .inner-div {
-    background-color: rgb(210, 210, 210);
-    border: 1px solid gray;
-    border-radius: 5px;
-    width: 340px;
-    height: 610px;
-    display: flex
-;
-    flex-direction: column;
-    align-items: center;
+	background-color: rgb(210, 210, 210);
+	border: 1px solid gray;
+	border-radius: 5px;
+	width: 340px;
+	height: 610px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 #top-text {
-display: flex
-;
-    justify-content: space-evenly;
-    font-size: 14px;
-    width: 300px;
-    height: 30px;
-    margin-bottom: 10px;
-    position: relative;
-    top: 15px;
+	display: flex;
+	font-size: 14px;
+	width: 300px;
+	height: 30px;
+	margin-bottom: 10px;
+	position: relative;
+	top: 15px;
+	 font-weight: 300;
 }
 
 #top-text span:first-child {
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: bold;
+	padding: 0px 20px 0px 6px;
 }
 
 #top-text span:last-child {
 	position: relative;
-    top: 10px;
-    font-size: 7px;
+	top: 10px;
+	font-size: 8px;
 }
 
 #content {
-background-color: white;
-    border-radius: 7px;
-    border: 1px solid black;
-    width: 93%;
-    height: 550px;
+	background-color: white;
+	border-radius: 7px;
+	border: 1px solid black;
+	width: 93%;
+	height: 550px;
 }
 
 @media ( max-width : 393px) and (max-height: 852px) {
@@ -95,27 +106,26 @@ background-color: white;
 		width: 60%;
 		height: 60%;
 	}
-#top-text {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 5px; /* span 사이 공백 줄이기 */
-	width: 100%;
-	font-size: 14px;
-	margin-bottom: 5px; /* content와의 간격 줄이기 */
-}
-
+	#top-text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 5px; /* span 사이 공백 줄이기 */
+		width: 100%;
+		font-size: 14px;
+		margin-bottom: 5px; /* content와의 간격 줄이기 */
+	}
 	#top-text span:last-child {
 		font-size: 6px;
 	}
-#content {
-	background-color: white;
-	border: 1px solid black;
-	width: 90%;
-	height: 400px;
-	margin-top: 20px;
-	border-radius: 5px;
-}
+	#content {
+		background-color: white;
+		border: 1px solid black;
+		width: 90%;
+		height: 400px;
+		margin-top: 20px;
+		border-radius: 5px;
+	}
 }
 </style>
 </head>
@@ -124,8 +134,7 @@ background-color: white;
 		<div class="middle-div">
 			<div class="inner-div">
 				<div id="top-text">
-					<span>유우시 님의 미니홈피</span>
-					<span>today 520 | TOTAL 20242222 </span>
+					<span>유우시 님의 미니홈피</span> <span>today 520 | TOTAL 20242222 </span>
 				</div>
 				<div id="content"></div>
 			</div>
