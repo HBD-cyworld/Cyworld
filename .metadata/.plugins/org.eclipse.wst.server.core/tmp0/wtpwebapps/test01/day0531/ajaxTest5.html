@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#btnAjax").click(function(){
+	$.ajax({
+		url:"MyFisrtStringAction.jsp",
+		success:function(data){
+			$("#output").html(data);
+		}
+		})
+	})
+});
+</script>
+</head>
+<body>
+	지금 내 생각은: <input type="text">
+	<hr>
+	<button id="btnAjax">Ajax통신하기</button>
+	<hr>
+	응답데이터<span id="output"></span>
+</body>
+</html>

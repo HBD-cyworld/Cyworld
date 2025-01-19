@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	.high_light{
+		background: pink;
+	}
+	.active{
+		background: red;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$("li").mouseenter(function() {
+			$("li").removeClass("high_light");
+			$(this).addClass("high_light");
+		}).click(function () {
+			$("li").removeClass("active");
+			$(this).addClass("active");
+			var ice=$(this).html();
+			$("#result").val(ice);
+		});
+
+	});
+	
+</script>
+</head>
+<body>
+	<ul>
+		<li>비비빅</li>
+		<li>메로나</li>
+		<li>빠삐코</li>
+		<li>구구콘</li>
+		<li>바밤바</li>
+	</ul>
+	선택한 아이스크림: <input id="result" type="text">
+</body>
+</html>

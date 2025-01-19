@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+#box{
+	width:500px;
+	height:300px;
+	border:solid 1px pink;
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	$("#box").click(function (event) {
+		var x=event.pageX;
+		console.log(x);
+	})
+});
+</script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

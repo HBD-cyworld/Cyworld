@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	$("#all_check").change(function () {
+		if(this.checked){
+			$("#check_item").children().attr("checked",true);
+		}else{
+			$("#check_item").children().attr("checked",false);
+		}
+	})
+});
+</script>
+</head>
+<body>
+	<input type="checkbox" id="all_check">All
+	<div id="check_item">
+		<input type="checkbox">사과
+		<input type="checkbox">포도
+		<input type="checkbox">수박
+	</div>
+</body>
+</html>

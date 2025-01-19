@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	.box{
+		float: left;
+		height: 400px;
+		overflow: scroll;
+		padding-left: 10px;
+	}
+	
+	#map{
+		width: 40%;
+		height: 300px;
+	}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04921855b487c340c8afad2f5c1800c5"></script>
+<script type="text/javascript">
+$(function(){
+	
+	var mapContainer = document.getElementById("map");
+	mapOption = {
+		center:new kakao.maps.LatLng(37.546023,126.982542),
+		level:3
+	};
+	
+	var map = new kakao.maps.Map(mapContainer, mapOption);
+	console.log(map);
+	console.log(mapContainer)
+	
+	
+	$("#list").on("click","li", function(){
+		var lat = $(this).attr("lat");
+		var lng = $(this).attr("lng");
+		var newPosition = new kakao.maps.LatLng(lat,lng);
+		map.panTo(newPosition);
+	});
+	
+	
+	$.ajax({
+		url:"travle.json",
+		success:function(data){
+			var arr = data.records;
+			$.each(arr, function(){
+				var name = this.관광지명;
+				var addr = this.소재지도로명주소;
+				var lat = this.위도;
+				var lng = this.경도;
+				
+				if(addr.match("서울")){
+					var li = $("<li></li>").html(name);
+					$(li).attr({
+						lat:lat,
+						lng:lng
+					});
+					$("#list").append(li);
+				}
+			});
+		}
+	})
+})
+</script>
+</head>
+
+<body>
+	<div class="box">
+		<ul id="list"></ul>
+	</div>	
+	
+	<div class="box" id="map">	
+	</div>	
+</body>
+</html>
+
+
+
+
+
+

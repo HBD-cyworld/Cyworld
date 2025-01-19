@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript">
+
+$(function () {
+	$.ajax({
+		url: "http://apis.data.go.kr/1360000/VilageFcstMsgService/getLandFcst?serviceKey=7SHD4fjkyqiTKQmvBjSGpyrNjrytmQD%2B6bNoNuJKaxZHmrREAaK8dPi%2BSLZYnJtu2unTIp%2FcWmQQQC6w8MMg9g%3D%3D&numOfRows=10&pageNo=1&regId=11B10101",
+		success: function(data){
+			var arr = $(data).find("item");
+			var date=$(arr[0]).find("announceTime").text();
+			var month=eval(date.substr(4,2));
+			var day=eval(date.substr(6,2));
+			var time=eval(date.substr(8,2));
+			
+			var data_arr=[];
+			for (var i = day; i < day+5; i++) {
+				date_arr.push(month+"월"+i+"일 오전");				
+				date_arr.push(month+"월"+i+"일 오후");				
+			}
+			
+			$.each(arr, function(){
+				var wf = $(this).find("wf").text();
+				var weatherInfo = date + " " + time + ": " + wf;
+				$("#weather").append(weatherInfo + "<br>");
+			});
+		}
+	});
+});
+</script>
+</head>
+<body>
+ <div id="weather"></div>
+</body>
+</html>

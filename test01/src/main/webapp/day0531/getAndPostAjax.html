@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	$("#btnGET").click(function () {
+		$.ajax({
+			url:"/test01/Hello",
+			type:"get",
+			success:function(data){
+				$("#box").html(data);
+			}
+		})
+	})
+	$("#btnPOST").click(function () {
+		$.ajax({
+			url:"/test01/Hello",
+			type:"post",
+			success:function(data){
+				$("#box").html(data);
+			}
+		})
+	})
+})
+</script>
+</head>
+<body>
+	<div id="box"></div>
+	<hr>
+	<button id="btnGET">get방식의 Ajax 통신하기 </button>
+	<button id="btnPOST">POST방식의 Ajax 통신하기 </button>
+</body>
+</html>

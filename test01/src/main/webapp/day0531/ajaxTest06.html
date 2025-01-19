@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	$.ajax({
+		url:"actionwithData.jsp",
+		data:{name:"tiger",age:25},
+		success:function(data){
+			$("#box").append(data);
+		}
+	})
+});
+</script>
+</head>
+<body>
+서버로부터 응답한 데이터
+<hr>
+<div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		document.getElementById("btnAjax").onclick=function(){
+			var request=new XMLHttpRequest();
+			request.onreadystatechange=function(){
+				if(request.readyState==4){
+					if(request.status==200){
+					//	alert(request.responseText);
+						document.getElementById("output").innerHTML=request.responseText;
+					}
+				}
+			}
+			request.open("GET","MyFirstStringAction.jsp",false);
+			request.send();
+		}
+	}
+</script>
+</head>
+<body>
+	지금 내 생각은: <input type="text">
+	<hr>
+	<button id="btnAjax">Ajax통신하기</button>
+	<hr>
+	응답데이터<span id="output"></span>
+</body>
+</html>

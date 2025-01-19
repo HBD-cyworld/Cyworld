@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>지도 생성하기</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=e0bde495689b806d30cf2a3902a5def0"></script>
+<script type="text/javascript">
+$(function () {
+    var mapContainer = document.getElementById("map"); // 지도를 표시할 div 
+    var map;
+    var mapOption = { 
+        center: new kakao.maps.LatLng(37.673211, 126.735806), // 지도의 중심좌표
+        level: 1 // 지도의 확대 레벨
+    };
+    $("#btnShow").click(function () {
+    // 지도를 표시할 div와 지도 옵션으로 지도를 생성합니다
+  	  map = new kakao.maps.Map(mapContainer, mapOption);
+	})
+	$("#btnHalla").click(function () {
+		var center=new kakao.maps.LatLng(33.363098,126.529510)
+		map.setCenter(center);
+	})
+	$("#btnHalla2").click(function () {
+		var center=new kakao.maps.LatLng(33.363098,126.529510)
+		map.panTo(center);
+	})
+	$("#btnMega").click(function () {
+		var center=new kakao.maps.LatLng(37.670598, 126.734992)
+		map.setCenter(center);
+	})
+	$("#btnMega2").click(function () {
+		var center=new kakao.maps.LatLng(37.670598, 126.734992)
+		map.panTo(center);
+	})
+});
+</script>
+</head>
+<body>
+<!-- 지도를 표시할 div 입니다 -->
+<div id="map" style="width:100%;height:350px;"></div>
+<button id="btnShow">지도 보이기</button>
+<button id="btnHalla">제주도 한라산</button>
+<button id="btnHalla2">제주도 한라산 부드럽게</button>
+<button id="btnMega">메가커피</button>
+<button id="btnMega2">메가커피 부드럽게</button>
+</body>
+</html>

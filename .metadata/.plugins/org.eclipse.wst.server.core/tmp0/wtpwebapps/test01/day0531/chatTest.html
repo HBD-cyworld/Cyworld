@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<meta name="viewport" content="with">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	setInterval(function () {
+		$("#output").empty();
+		$.getJSON("chatting.jsp",function(arr){
+			$.each(arr,function(){
+				var p=$("<p></p>").html("<b>"+this.name+"</b> :"+this.message);
+				$("#output").append(p);
+			});
+		});
+	},1000);
+	
+	$("#write_form").submit(function(){
+		
+		var data=$(this).serializeArray();
+		$.post("chatting.jsp",data,function(){
+			$("#message").val("");
+		});
+		
+		return false;
+	});
+});
+</script>
+</head>
+<body>
+	<form id="write_form">
+		<table>
+			<tr>
+				<td>닉네임</td>
+				<td>
+					<input type="text" id="name" name="name">
+				</td>
+			</tr>
+			<tr>
+				<td>메시지</td>
+				<td>
+					<input type="text" name="message">
+				</td>
+			</tr>
+		</table>
+		<input type="submit" value="글쓰기">
+	</form>
+	<div id="output"></div>
+</body>
+</html>
